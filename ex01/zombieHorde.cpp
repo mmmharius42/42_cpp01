@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 00:07:08 by mpapin            #+#    #+#             */
-/*   Updated: 2025/07/09 00:22:22 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/07/09 00:24:27 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ Zombie* zombieHorde( int N, std::string name ) {
     horde = new Zombie[N];
     i = -1;
     while(++i < N)
-        horde[i] = Zombie[name];
+        horde[i] = Zombie(name);
     return(horde);            
 }

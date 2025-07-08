@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 00:04:20 by mpapin            #+#    #+#             */
-/*   Updated: 2025/07/09 00:22:29 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/07/09 00:25:32 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main()
     int i;
     std::string name;
 
-    N = 5;
+    N = 10;
     name = "Walker";
     horde = zombieHorde(N, name);
     if (!horde)
