@@ -6,7 +6,16 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 04:23:35 by mpapin            #+#    #+#             */
-/*   Updated: 2025/07/09 04:26:16 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/07/09 21:59:07 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string>
+
+class Weapon {
+    private :
+    std::string type;
+    
+    public :
+    
+}
