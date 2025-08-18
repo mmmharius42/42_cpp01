@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 04:10:03 by mpapin            #+#    #+#             */
-/*   Updated: 2025/06/30 04:57:28 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/08/18 16:58:32 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 int main(void)
 {
-	std::cout << "=== Testing newZombie (heap allocation) ===" << std::endl;
-	Zombie* heapZombie = newZombie("HeapWalker");
+	std::cout << "===== heap =====" << std::endl;
+	Zombie* heapZombie = newZombie("Zomblar1");
 	heapZombie->announce();
 	delete heapZombie;
 
 	std::cout << std::endl;
-	std::cout << "=== Testing randomChump (stack allocation) ===" << std::endl;
-	randomChump("StackBiter");
+	std::cout << "===== stack =====" << std::endl;
+	randomChump("Zomblar2");
 
 	std::cout << std::endl;
-	std::cout << "=== Testing multiple zombies ===" << std::endl;
-	Zombie* zombie1 = newZombie("Alice");
-	Zombie* zombie2 = newZombie("Bob");
+	std::cout << "===== multiple zomblar =====" << std::endl;
+	Zombie* zombie1 = newZombie("Zomblar3");
+	Zombie* zombie2 = newZombie("Zomblar4");
 	
 	zombie1->announce();
 	zombie2->announce();

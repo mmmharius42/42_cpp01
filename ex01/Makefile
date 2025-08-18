@@ -1,9 +1,8 @@
 NAME = zombie
 
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CC = c++
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCDIR = .
 OBJDIR = obj
 
 SOURCES = main.cpp Zombie.cpp zombieHorde.cpp
@@ -12,11 +11,11 @@ OBJECTS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.cpp
+$(OBJDIR)/%.o: ./%.cpp
 	@mkdir -p $(OBJDIR)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJDIR)

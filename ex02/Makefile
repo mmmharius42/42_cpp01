@@ -3,7 +3,6 @@ NAME = Brain
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCDIR = .
 OBJDIR = obj
 
 SOURCES = main.cpp
@@ -14,7 +13,7 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(NAME)
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.cpp
+$(OBJDIR)/%.o: ./%.cpp
 	@mkdir -p $(OBJDIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 

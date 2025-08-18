@@ -1,22 +1,21 @@
-NAME = zombie
+NAME = BraiiiiiiinnnzzzZ
 
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-
-SRCDIR = .
 OBJDIR = obj
 
-SOURCES = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
-OBJECTS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)
+SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+OBJ = $(SRC:%.cpp=$(OBJDIR)/%.o)
+
+CC = c++
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
-	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(NAME)
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.cpp
+$(OBJDIR)/%.o: ./%.cpp
 	@mkdir -p $(OBJDIR)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJDIR)

@@ -6,10 +6,9 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 04:11:02 by mpapin            #+#    #+#             */
-/*   Updated: 2025/06/30 04:57:32 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/08/19 00:39:15 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP
@@ -20,7 +19,6 @@
 class Zombie
 {
     private:
-
 	    std::string name;
 
     public:

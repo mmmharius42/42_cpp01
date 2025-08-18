@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 04:08:06 by mpapin            #+#    #+#             */
-/*   Updated: 2025/07/09 04:12:45 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/08/19 00:47:50 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main()
     std::cout << "Adresse de stringREF: " << &stringREF << std::endl;
 
     std::cout << "Valeur de la variable string: " << str << std::endl;
-    std::cout << "Valeur pointée par stringPTR: " << *stringPTR << std::endl;
+    std::cout << "Valeur pointee par stringPTR: " << *stringPTR << std::endl;
     std::cout << "Valeur de stringREF: " << stringREF << std::endl;
     
     return 0;
