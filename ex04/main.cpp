@@ -5,31 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/09 04:22:36 by mpapin            #+#    #+#             */
-/*   Updated: 2025/08/27 15:45:17 by mpapin           ###   ########.fr       */
+/*   Created: 2025/08/27 15:44:33 by mpapin            #+#    #+#             */
+/*   Updated: 2025/08/27 15:54:19 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-#include "Weapon.hpp"
+#include <iostream>
 
-int main()
+#include "replace.hpp"
+
+int main(int argc, char **argv)
 {
-    {
-        Weapon club = Weapon("crude spiked club");
-        HumanA bob("Bob", club);
-        bob.attack();
-        club.setType("some other type of club");
-        bob.attack();
+    if (argc != 4) {
+        std::cerr << "Usage: " << argv[0] << " <filename> <s1> <s2>" << std::endl;
+        return 1;
     }
-    {
-        Weapon club = Weapon("crude spiked club");
-        HumanB jim("Jim");
-        jim.setWeapon(club);
-        jim.attack();
-        club.setType("some other type of club");
-        jim.attack();
+
+    replace replace(argv[1], argv[2], argv[3]);
+
+    if (!replace.processFile()) {
+        return 1;
     }
+
     return 0;
 }

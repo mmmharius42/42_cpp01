@@ -1,11 +1,11 @@
-NAME = violence
+NAME = replace
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJDIR = obj
 
-SOURCES = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SOURCES = main.cpp replace.cpp
 OBJECTS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)
 
 all: $(NAME)

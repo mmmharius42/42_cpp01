@@ -6,20 +6,22 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 21:56:14 by mpapin            #+#    #+#             */
-/*   Updated: 2025/07/09 22:33:22 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/08/27 15:45:14 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon(std::string type) {
-    this->type = type;
+Weapon::Weapon(const std::string& type) : type(type) {
 }
 
-const std::string& Weapon::getType() {
-    return type;
+Weapon::~Weapon() {
 }
 
-void Weapon::setType(std::sring& newtype) {
-    type = newtype;
+const std::string& Weapon::getType() const {
+    return this->type;
+}
+
+void Weapon::setType(const std::string& newtype) {
+    this->type = newtype;
 }
