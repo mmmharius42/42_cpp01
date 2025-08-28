@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 15:56:49 by mpapin            #+#    #+#             */
-/*   Updated: 2025/08/27 17:38:53 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/08/28 15:04:25 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	Harl::debug(void)
 
 void	Harl::info(void)
 {
-	std::cout << "[ INFO ] " << std::endl;
+	std::cout << "[ INFO ]" << std::endl;
 	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
 }
 
