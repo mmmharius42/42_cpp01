@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 04:10:03 by mpapin            #+#    #+#             */
-/*   Updated: 2025/08/18 16:58:32 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/08/28 15:45:53 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,10 @@ int main(void)
 	heapZombie->announce();
 	delete heapZombie;
 
-	std::cout << std::endl;
-	std::cout << "===== stack =====" << std::endl;
+	std::cout << std::endl << "===== stack =====" << std::endl;
 	randomChump("Zomblar2");
 
-	std::cout << std::endl;
-	std::cout << "===== multiple zomblar =====" << std::endl;
+	std::cout << std::endl << "===== multiple zomblar =====" << std::endl;
 	Zombie* zombie1 = newZombie("Zomblar3");
 	Zombie* zombie2 = newZombie("Zomblar4");
 	
