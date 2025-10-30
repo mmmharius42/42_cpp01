@@ -1,24 +1,27 @@
 NAME = violence
+CC = c++
+CCFLAGS = -Wall -Wextra -Werror -std=c++98 -Iincludes
+SRC = .
+OBJ = obj
+SRCS = main.cpp src/Weapon.cpp src/HumanA.cpp src/HumanB.cpp
+OBJS = $(addprefix $(OBJ)/, $(notdir $(SRCS:.cpp=.o)))
 
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+all: $(OBJ) $(NAME)
 
-OBJDIR = obj
+$(OBJ):
+	mkdir -p $(OBJ)
 
-SOURCES = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
-OBJECTS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)
+$(NAME): $(OBJS)
+	$(CC) $(CCFLAGS) $(OBJS) -o $(NAME)
 
-all: $(NAME)
+$(OBJ)/%.o: $(SRC)/%.cpp
+	$(CC) $(CCFLAGS) -c $< -o $@
 
-$(NAME): $(OBJECTS)
-	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(NAME)
-
-$(OBJDIR)/%.o: ./%.cpp
-	@mkdir -p $(OBJDIR)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+$(OBJ)/%.o: $(SRC)/src/%.cpp
+	$(CC) $(CCFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJDIR)
+	rm -rf $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)

@@ -1,24 +1,28 @@
 NAME = replace
+CC = c++
+CCFLAGS = -Wall -Wextra -Werror -std=c++98 -Iincludes
+SRC = .
+OBJ = obj
 
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+SRCS = main.cpp src/replace.cpp
+OBJS = $(addprefix $(OBJ)/, $(notdir $(SRCS:.cpp=.o)))
 
-OBJDIR = obj
+all: $(OBJ) $(NAME)
 
-SOURCES = main.cpp replace.cpp
-OBJECTS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)
+$(OBJ):
+	mkdir -p $(OBJ)
 
-all: $(NAME)
+$(NAME): $(OBJS)
+	$(CC) $(CCFLAGS) $(OBJS) -o $(NAME)
 
-$(NAME): $(OBJECTS)
-	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(NAME)
+$(OBJ)/%.o: $(SRC)/%.cpp
+	$(CC) $(CCFLAGS) -c $< -o $@
 
-$(OBJDIR)/%.o: ./%.cpp
-	@mkdir -p $(OBJDIR)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+$(OBJ)/%.o: $(SRC)/src/%.cpp
+	$(CC) $(CCFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJDIR)
+	rm -rf $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)

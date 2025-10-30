@@ -1,24 +1,28 @@
 NAME = zombie
-
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CCFLAGS = -Wall -Wextra -Werror -std=c++98 -Iincludes
+SRC = .
+OBJ = obj
 
-OBJDIR = obj
+SRCS = main.cpp src/Zombie.cpp src/zombieHorde.cpp
+OBJS = $(addprefix $(OBJ)/, $(notdir $(SRCS:.cpp=.o)))
 
-SOURCES = main.cpp Zombie.cpp zombieHorde.cpp
-OBJECTS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)
+all: $(OBJ) $(NAME)
 
-all: $(NAME)
+$(OBJ):
+	mkdir -p $(OBJ)
 
-$(NAME): $(OBJECTS)
-	$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
+$(NAME): $(OBJS)
+	$(CC) $(CCFLAGS) $(OBJS) -o $(NAME)
 
-$(OBJDIR)/%.o: ./%.cpp
-	@mkdir -p $(OBJDIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJ)/%.o: $(SRC)/%.cpp
+	$(CC) $(CCFLAGS) -c $< -o $@
+
+$(OBJ)/%.o: $(SRC)/src/%.cpp
+	$(CC) $(CCFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJDIR)
+	rm -rf $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)

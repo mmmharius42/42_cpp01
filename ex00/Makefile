@@ -1,24 +1,28 @@
 NAME = BraiiiiiiinnnzzzZ
-
-OBJDIR = obj
-
-SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
-OBJ = $(SRC:%.cpp=$(OBJDIR)/%.o)
-
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CCFLAGS = -Wall -Wextra -Werror -std=c++98 -Iincludes
+SRC = .
+OBJ = obj
 
-all: $(NAME)
+SRCS = main.cpp src/newZombie.cpp src/randomChump.cpp src/Zombie.cpp
+OBJS = $(addprefix $(OBJ)/, $(notdir $(SRCS:.cpp=.o)))
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+all: $(OBJ) $(NAME)
 
-$(OBJDIR)/%.o: ./%.cpp
-	@mkdir -p $(OBJDIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJ):
+	mkdir -p $(OBJ)
+
+$(NAME): $(OBJS)
+	$(CC) $(CCFLAGS) $(OBJS) -o $(NAME)
+
+$(OBJ)/%.o: $(SRC)/%.cpp
+	$(CC) $(CCFLAGS) -c $< -o $@
+
+$(OBJ)/%.o: $(SRC)/src/%.cpp
+	$(CC) $(CCFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJDIR)
+	rm -rf $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
