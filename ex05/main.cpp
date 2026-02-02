@@ -32,6 +32,5 @@ int	main(void)
 	std::cout << "ERROR :" << std::endl;
 	harl.complain("ERROR");
 	std::cout << std::endl;
-
 	return (0);
 }
